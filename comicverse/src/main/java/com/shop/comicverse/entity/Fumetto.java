@@ -22,7 +22,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Fumetto")
+@Table(name = "FUMETTO")
 public class Fumetto {
 
 	@Id
@@ -34,13 +34,13 @@ public class Fumetto {
 	private String editore;
 	private int volume;
 	
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATA_PUBBLICAZIONE")
 	private Date dataPubblicazione = new Date();
 	
 	private String descrizione;
 	
-	//possibile errore 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
     @JoinTable(name = "GENERE_FUMETTO", 
     			joinColumns = @JoinColumn(name = "IdFumetto"), 
@@ -51,7 +51,6 @@ public class Fumetto {
 	@JoinColumn(name = "idAutore")
 	private Autore autoreFumetto;
 	
-	@OneToOne(mappedBy = "fumetto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Inventario inventario;
+
 	
 }

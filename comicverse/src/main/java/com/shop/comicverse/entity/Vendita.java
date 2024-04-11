@@ -33,7 +33,7 @@ public class Vendita {
 	
 	private BigDecimal totaleOrdine;
 	
-	//possibile errore
+	
 	enum metodoPagamento{
 		CONTANTI, 
 		CARTA_DI_CREDITO, 

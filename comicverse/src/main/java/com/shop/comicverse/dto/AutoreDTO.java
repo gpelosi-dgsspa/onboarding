@@ -15,3 +15,4 @@ public class AutoreDTO {
 	private boolean vivo;
 	private List<Fumetto> listaFumetti;
 }
+

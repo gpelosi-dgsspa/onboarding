@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -22,7 +23,8 @@ public class Dettaglio {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDettaglio;
 	
-	//Entita Articolo, 
+	@ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "FK_ARTICOLO")
 	private Inventario oggetto;
 	
 	private int quantita;
