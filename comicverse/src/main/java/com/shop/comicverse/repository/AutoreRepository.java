@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.shop.comicverse.entity.Autore;
 
 @Repository
-public interface AutoreRepository extends JpaRepository<Autore, Long>{
+public interface AutoreRepository extends JpaRepository<Autore, Integer>{
 
 }

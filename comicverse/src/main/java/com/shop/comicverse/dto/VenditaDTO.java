@@ -12,14 +12,13 @@ import lombok.Data;
 @Data
 public class VenditaDTO {
 
-	private int idVendita;
+	private Integer idVendita;
 	private Date dataOrdine = new Date();
 	private BigDecimal totaleOrdine;
-	/*enum metodoPagamento{
-	CONTANTI, 
-	CARTA_DI_CREDITO, 
-	BANCOMAT
-	}*/
-	private List<String> metodoPagamento = Arrays.asList("CONTANTI", "CARTA_DI_CREDITO", "BANCOMAT");
+	enum metodoPagamento{
+		CONTANTI,
+		CARTA_DI_CREDITO,
+		BANCOMAT
+	}
 	private List<Dettaglio> listaDettaglio;
 }

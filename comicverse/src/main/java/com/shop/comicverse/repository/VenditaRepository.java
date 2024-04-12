@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.shop.comicverse.entity.Vendita;
 
 @Repository
-public interface VenditaRepository extends JpaRepository<Vendita, Long>{
+public interface VenditaRepository extends JpaRepository<Vendita, Integer>{
 
 }

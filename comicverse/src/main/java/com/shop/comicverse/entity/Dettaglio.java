@@ -21,7 +21,7 @@ import lombok.Data;
 public class Dettaglio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idDettaglio;
+	private Integer idDettaglio;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "FK_ARTICOLO")

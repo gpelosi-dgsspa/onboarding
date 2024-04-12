@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.shop.comicverse.entity.Genere;
 
 @Repository
-public interface GenereRepository extends JpaRepository<Genere, Long>{
+public interface GenereRepository extends JpaRepository<Genere, Integer>{
 
 }

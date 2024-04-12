@@ -25,15 +25,14 @@ import lombok.Data;
 public class Vendita {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idVendita;
+	private Integer idVendita;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATA_ORDINE")
 	private Date dataOrdine = new Date();
 	
 	private BigDecimal totaleOrdine;
-	
-	
+
 	enum metodoPagamento{
 		CONTANTI, 
 		CARTA_DI_CREDITO, 

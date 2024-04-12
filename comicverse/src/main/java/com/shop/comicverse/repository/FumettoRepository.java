@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.shop.comicverse.entity.Fumetto;
 
 @Repository
-public interface FumettoRepository extends JpaRepository<Fumetto, Long>{
+public interface FumettoRepository extends JpaRepository<Fumetto, Integer>{
 
 }

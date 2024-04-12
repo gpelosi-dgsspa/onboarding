@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class AutoreDTO {
 
-	private int idAutore;
+	private Integer idAutore;
 	private String nomeCognome;
 	private String biografia;
 	private boolean vivo;

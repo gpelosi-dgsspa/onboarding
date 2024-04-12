@@ -10,8 +10,8 @@ import lombok.Data;
 @Data
 public class InventarioDTO {
 
-	private int idArticolo;
-	private List<Fumetto> listaFumetti;
+	private Integer idArticolo;
+	private Fumetto fumetto;
 	private BigDecimal prezzoVendita;
 	private int giacenza;
 }

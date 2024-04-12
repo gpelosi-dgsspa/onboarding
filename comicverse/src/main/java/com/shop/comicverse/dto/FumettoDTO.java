@@ -12,7 +12,7 @@ import lombok.Data;
 @Data
 public class FumettoDTO {
 
-	private int idFumetto;
+	private Integer idFumetto;
 	private String titolo;
 	private String editore;
 	private int volume;

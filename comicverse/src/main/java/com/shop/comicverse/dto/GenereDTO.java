@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class GenereDTO {
 
-	private int idGenere;
+	private Integer idGenere;
 	private String nome;
 }

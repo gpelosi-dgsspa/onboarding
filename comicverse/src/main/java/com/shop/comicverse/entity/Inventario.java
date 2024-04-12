@@ -35,7 +35,7 @@ public class Inventario {
 	private BigDecimal prezzoVendita;
 
 	@Column(name = "GIACENZA")
-	private Integer giacenza;
+	private int giacenza;
 	
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "oggetto", cascade = CascadeType.ALL)

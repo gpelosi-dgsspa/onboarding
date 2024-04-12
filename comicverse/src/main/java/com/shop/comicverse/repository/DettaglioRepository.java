@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.shop.comicverse.entity.Dettaglio;
 
 @Repository
-public interface DettaglioRepository extends JpaRepository<Dettaglio, Long>{
+public interface DettaglioRepository extends JpaRepository<Dettaglio, Integer>{
 
 }

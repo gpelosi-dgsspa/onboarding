@@ -19,7 +19,7 @@ public class Autore {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idAutore;
+	private Integer idAutore;
 	
 	private String nomeCognome;
 	
