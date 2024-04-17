@@ -1,29 +1,50 @@
 package com.shop.comicverse.service;
 
+import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.entity.Autore;
+import com.shop.comicverse.mapping.AutoreMapping;
 import com.shop.comicverse.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class AutoreService {
     @Autowired
     private AutoreRepository autoreRepository;
+    private AutoreMapping autoreMapping;
 
-    public void creaAutore(Autore autore) {
-        autoreRepository.save(autore);
+    public AutoreDTO creaAutore(AutoreDTO autoreDTO) {
+        Autore autore = autoreMapping.convertiDTOinAutore(autoreDTO);
+        Autore newAutore = autoreRepository.save(autore);
+        return autoreMapping.convertiAutoreinDTO(newAutore);
     }
 
-    public Optional<Autore> cercaAutoreId(Integer id) {
-        return autoreRepository.findById(id);
+    public AutoreDTO cercaAutoreId(Integer id) {
+        Optional<Autore> autoreOpt = autoreRepository.findById(id);
+        Autore autore = autoreOpt.orElseThrow(() -> new RuntimeException(String.format("Id Autore %d non trovato", id)));
+        return autoreMapping.convertiAutoreinDTO(autore);
     }
 
-    public List<Autore> listaAutori() {
-        return autoreRepository.findAll();
+    public List<AutoreDTO> listaAutori() {
+        List<Autore> autori = autoreRepository.findAll();
+        return autori.stream().map(autoreMapping::convertiAutoreinDTO)
+                .collect(Collectors.toList());
     }
 
-    public void cancellaAutore(Integer id){
+    public void cancellaAutoredaId(Integer id){
         autoreRepository.deleteById(id);
+    }
+
+    public AutoreDTO aggiornaAutore (AutoreDTO autoreDTO){
+        try {
+            cercaAutoreId(autoreDTO.getIdAutore());
+            Autore autoreUp = autoreMapping.convertiDTOinAutore(autoreDTO);
+            Autore upAutore = autoreRepository.save(autoreUp);
+            return autoreMapping.convertiAutoreinDTO(upAutore);
+        } catch (Exception e){
+            throw new RuntimeException("Aggiornamento fallito");
+        }
     }
 }
