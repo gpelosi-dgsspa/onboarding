@@ -2,7 +2,9 @@ package com.shop.comicverse.mapping;
 
 import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.entity.Autore;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AutoreMapping {
 
     public Autore convertiDTOinAutore (AutoreDTO autoreDTO){

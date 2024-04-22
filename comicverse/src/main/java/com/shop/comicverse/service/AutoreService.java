@@ -5,14 +5,17 @@ import com.shop.comicverse.entity.Autore;
 import com.shop.comicverse.mapping.AutoreMapping;
 import com.shop.comicverse.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class AutoreService {
     @Autowired
     private AutoreRepository autoreRepository;
+    @Autowired
     private AutoreMapping autoreMapping;
 
     public AutoreDTO creaAutore(AutoreDTO autoreDTO) {

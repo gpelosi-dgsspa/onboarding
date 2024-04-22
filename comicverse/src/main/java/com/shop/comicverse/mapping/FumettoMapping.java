@@ -2,7 +2,9 @@ package com.shop.comicverse.mapping;
 
 import com.shop.comicverse.dto.FumettoDTO;
 import com.shop.comicverse.entity.Fumetto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FumettoMapping {
     public Fumetto convertiDTOinFumetto (FumettoDTO fumettoDTO){
         Fumetto fumetto = new Fumetto();
@@ -12,8 +14,8 @@ public class FumettoMapping {
         fumetto.setVolume(fumettoDTO.getVolume());
         fumetto.setDataPubblicazione(fumettoDTO.getDataPubblicazione());
         fumetto.setDescrizione(fumettoDTO.getDescrizione());
-        fumetto.setListaGeneri(fumettoDTO.getListaGeneri());
-        fumetto.setAutoreFumetto(fumettoDTO.getAutoreFumetto());
+        //fumetto.setListaGeneri(fumettoDTO.getListaGeneri());
+        //fumetto.setAutoreFumetto(fumettoDTO.getAutoreFumetto());
         return fumetto;
     }
 
@@ -25,8 +27,8 @@ public class FumettoMapping {
         fumettoDTO.setVolume(fumetto.getVolume());
         fumettoDTO.setDataPubblicazione(fumetto.getDataPubblicazione());
         fumettoDTO.setDescrizione(fumetto.getDescrizione());
-        fumettoDTO.setListaGeneri(fumetto.getListaGeneri());
-        fumettoDTO.setAutoreFumetto(fumetto.getAutoreFumetto());
+        //fumettoDTO.setListaGeneri(fumetto.getListaGeneri());
+        //fumettoDTO.setAutoreFumetto(fumetto.getAutoreFumetto());
         return fumettoDTO;
     }
 }

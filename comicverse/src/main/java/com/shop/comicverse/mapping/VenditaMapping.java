@@ -1,10 +1,10 @@
 package com.shop.comicverse.mapping;
 
-import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.dto.VenditaDTO;
-import com.shop.comicverse.entity.Autore;
 import com.shop.comicverse.entity.Vendita;
+import org.springframework.stereotype.Component;
 
+@Component
 public class VenditaMapping {
     public Vendita convertiDTOinVendita (VenditaDTO venditaDTO) {
         Vendita vendita = new Vendita();

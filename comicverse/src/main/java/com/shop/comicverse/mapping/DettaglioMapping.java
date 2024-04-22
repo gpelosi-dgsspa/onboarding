@@ -2,7 +2,9 @@ package com.shop.comicverse.mapping;
 
 import com.shop.comicverse.dto.DettaglioDTO;
 import com.shop.comicverse.entity.Dettaglio;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DettaglioMapping {
 
     public Dettaglio convertiDTOinDettaglio (DettaglioDTO dettaglioDTO){

@@ -2,7 +2,9 @@ package com.shop.comicverse.mapping;
 
 import com.shop.comicverse.dto.InventarioDTO;
 import com.shop.comicverse.entity.Inventario;
+import org.springframework.stereotype.Component;
 
+@Component
 public class InventarioMapping {
 
     public Inventario convertiDTOinInventario(InventarioDTO inventarioDTO) {

@@ -7,14 +7,17 @@ import com.shop.comicverse.entity.Vendita;
 import com.shop.comicverse.mapping.VenditaMapping;
 import com.shop.comicverse.repository.VenditaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class VenditaService {
     @Autowired
     private VenditaRepository venditaRepository;
+    @Autowired
     private VenditaMapping venditaMapping;
 
     public VenditaDTO creaVendita(VenditaDTO venditaDTO) {

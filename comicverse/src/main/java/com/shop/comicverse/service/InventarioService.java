@@ -5,14 +5,17 @@ import com.shop.comicverse.entity.Inventario;
 import com.shop.comicverse.mapping.InventarioMapping;
 import com.shop.comicverse.repository.InventarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class InventarioService {
     @Autowired
     private InventarioRepository inventarioRepository;
+    @Autowired
     private InventarioMapping inventarioMapping;
 
     public InventarioDTO creaInventario(InventarioDTO inventarioDTO) {

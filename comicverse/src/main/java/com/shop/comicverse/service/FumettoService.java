@@ -17,6 +17,7 @@ public class FumettoService {
 
 	@Autowired
 	private FumettoRepository fumettoRepository;
+	@Autowired
 	private FumettoMapping fumettoMapping;
 
 	public FumettoDTO creaFumetto(FumettoDTO fumettoDTO) {

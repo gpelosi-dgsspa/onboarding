@@ -5,14 +5,17 @@ import com.shop.comicverse.entity.Dettaglio;
 import com.shop.comicverse.mapping.DettaglioMapping;
 import com.shop.comicverse.repository.DettaglioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class DettaglioService {
     @Autowired
     private DettaglioRepository dettaglioRepository;
+    @Autowired
     private DettaglioMapping dettaglioMapping;
 
     public DettaglioDTO creaDettaglio(DettaglioDTO dettaglioDTO) {

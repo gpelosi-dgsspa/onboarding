@@ -5,14 +5,17 @@ import com.shop.comicverse.entity.Genere;
 import com.shop.comicverse.mapping.GenereMapping;
 import com.shop.comicverse.repository.GenereRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class GenereService {
     @Autowired
     private GenereRepository genereRepository;
+    @Autowired
     private GenereMapping genereMapping;
 
     public GenereDTO creaGenere(GenereDTO genereDTO) {
