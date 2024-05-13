@@ -2,6 +2,7 @@ package com.shop.comicverse.service;
 
 import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.entity.Autore;
+import com.shop.comicverse.entity.Fumetto;
 import com.shop.comicverse.mapping.AutoreMapping;
 import com.shop.comicverse.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,10 @@ public class AutoreService {
         } catch (Exception e){
             throw new RuntimeException("Aggiornamento fallito");
         }
+    }
+
+    public List<Autore> autoriVivi() {
+        List<Autore> autoriVivi = autoreRepository.autoriVivi();
+        return autoriVivi;
     }
 }

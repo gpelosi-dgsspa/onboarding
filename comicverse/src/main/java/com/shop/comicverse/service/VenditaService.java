@@ -3,6 +3,7 @@ package com.shop.comicverse.service;
 import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.dto.VenditaDTO;
 import com.shop.comicverse.entity.Autore;
+import com.shop.comicverse.entity.Inventario;
 import com.shop.comicverse.entity.Vendita;
 import com.shop.comicverse.mapping.VenditaMapping;
 import com.shop.comicverse.repository.VenditaRepository;
@@ -51,5 +52,25 @@ public class VenditaService {
         } catch (Exception e){
             throw new RuntimeException("Aggiornamento fallito");
         }
+    }
+
+    public Double totale(){
+        Double sommaVendita = venditaRepository.totale();
+        return sommaVendita;
+    }
+
+    public Integer numeroOrdini(){
+        Integer totaleOrdini = venditaRepository.numeroOrdini();
+        return totaleOrdini;
+    }
+
+    public Double importoMedioOrdine(){
+        Double importoMedio = venditaRepository.importoMedioOrdine();
+        return importoMedio;
+    }
+
+    public Integer numeroArticoliVenduti(){
+        Integer articoliVenduti = venditaRepository.numeroArticoliVenduti();
+        return articoliVenduti;
     }
 }

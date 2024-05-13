@@ -3,6 +3,7 @@ package com.shop.comicverse.controller;
 import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.dto.FumettoDTO;
 import com.shop.comicverse.dto.GenereDTO;
+import com.shop.comicverse.entity.Fumetto;
 import com.shop.comicverse.service.AutoreService;
 import com.shop.comicverse.service.FumettoService;
 import com.shop.comicverse.service.GenereService;
@@ -12,9 +13,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/gestione-fumetti")
+@RequestMapping("/fumetti")
 public class FumettoController {
 
     @Autowired
@@ -120,5 +123,28 @@ public class FumettoController {
     public ResponseEntity<Void> eliminaGenere (@PathVariable Integer id) {
         genereService.cancellaGenere(id);
         return ResponseEntity.noContent().build();
+    }
+
+    //CRUD Patch
+    @PatchMapping("/aggiorna-fumetto/{id}/{volume}")
+    public ResponseEntity<FumettoDTO> cambiaVolumiFumetto (@PathVariable Integer id, @PathVariable Integer volumi){
+        try {
+            FumettoDTO fumetto = fumettoService.cercaFumettoId(id);
+            fumetto.setVolume(volumi);
+            return new ResponseEntity<FumettoDTO>(fumettoService.aggiornaFumetto(fumetto), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PatchMapping("/aggiorna-autore/{id}/{vivo}")
+    public ResponseEntity<AutoreDTO> cambiaVivoAutore (@PathVariable Integer id, @PathVariable Boolean vivo){
+        try {
+            AutoreDTO autore = autoreService.cercaAutoreId(id);
+            autore.setVivo(vivo);
+            return new ResponseEntity<AutoreDTO>(autoreService.aggiornaAutore(autore), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
