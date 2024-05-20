@@ -1,7 +1,6 @@
 package com.shop.comicverse.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;
