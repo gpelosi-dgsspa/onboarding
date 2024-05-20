@@ -1,14 +1,12 @@
 package com.shop.comicverse.service;
 
 import com.shop.comicverse.dto.InventarioDTO;
-import com.shop.comicverse.entity.Fumetto;
 import com.shop.comicverse.entity.Inventario;
 import com.shop.comicverse.mapping.InventarioMapping;
 import com.shop.comicverse.repository.InventarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

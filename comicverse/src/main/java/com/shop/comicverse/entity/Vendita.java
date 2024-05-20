@@ -1,47 +1,30 @@
 package com.shop.comicverse.entity;
 
+import com.shop.comicverse.things.MetodoPagamento;
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Vendita")
+@Table(name = "VENDITA")
 public class Vendita {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_VENDITA")
 	private Integer idVendita;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name = "DATA_ORDINE")
 	private Date dataOrdine = new Date();
-	
+
+	@Column(name = "TOTALE_ORDINE")
 	private BigDecimal totaleOrdine;
 
-	enum metodoPagamento{
-		CONTANTI, 
-		CARTA_DI_CREDITO, 
-		BANCOMAT
-	}
-	
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-    @JoinTable(name = "DETTAGLIO_VENDITA", 
-    			joinColumns = @JoinColumn(name = "Vendita"), 
-    			inverseJoinColumns = @JoinColumn(name = "Dettaglio"))
-	private List<Dettaglio> listaDettaglio;
+	@Column(name = "METODO_PAGAMENTO")
+	@Enumerated(EnumType.STRING)
+	private MetodoPagamento metodoPagamento;
+
 }

@@ -11,7 +11,7 @@ public class DettaglioMapping {
         Dettaglio dettaglio = new Dettaglio();
         dettaglio.setIdDettaglio(dettaglioDTO.getIdDettaglio());
         dettaglio.setQuantita(dettaglioDTO.getQuantita());
-        dettaglio.setOggetto(dettaglioDTO.getOggetto());
+        dettaglio.setArticolo(dettaglioDTO.getArticolo());
         return dettaglio;
     }
 
@@ -19,7 +19,7 @@ public class DettaglioMapping {
         DettaglioDTO dettaglioDTO = new DettaglioDTO();
         dettaglioDTO.setIdDettaglio(dettaglio.getIdDettaglio());
         dettaglioDTO.setQuantita(dettaglio.getQuantita());
-        dettaglioDTO.setOggetto(dettaglio.getOggetto());
+        dettaglioDTO.setArticolo(dettaglio.getArticolo());
         return dettaglioDTO;
     }
 }

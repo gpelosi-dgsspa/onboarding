@@ -1,6 +1,8 @@
 package com.shop.comicverse.controller;
 
-import com.shop.comicverse.dto.*;
+import com.shop.comicverse.dto.DettaglioDTO;
+import com.shop.comicverse.dto.InventarioDTO;
+import com.shop.comicverse.dto.VenditaDTO;
 import com.shop.comicverse.entity.Autore;
 import com.shop.comicverse.entity.Fumetto;
 import com.shop.comicverse.entity.Inventario;

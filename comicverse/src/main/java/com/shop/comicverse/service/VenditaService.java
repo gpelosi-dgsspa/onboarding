@@ -1,9 +1,6 @@
 package com.shop.comicverse.service;
 
-import com.shop.comicverse.dto.AutoreDTO;
 import com.shop.comicverse.dto.VenditaDTO;
-import com.shop.comicverse.entity.Autore;
-import com.shop.comicverse.entity.Inventario;
 import com.shop.comicverse.entity.Vendita;
 import com.shop.comicverse.mapping.VenditaMapping;
 import com.shop.comicverse.repository.VenditaRepository;

@@ -1,13 +1,12 @@
 package com.shop.comicverse.dto;
 
+import com.shop.comicverse.entity.Dettaglio;
+import com.shop.comicverse.things.MetodoPagamento;
+import lombok.Data;
+
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-
-import com.shop.comicverse.entity.Dettaglio;
-
-import lombok.Data;
 
 @Data
 public class VenditaDTO {
@@ -15,10 +14,6 @@ public class VenditaDTO {
 	private Integer idVendita;
 	private Date dataOrdine = new Date();
 	private BigDecimal totaleOrdine;
-	enum metodoPagamento{
-		CONTANTI,
-		CARTA_DI_CREDITO,
-		BANCOMAT
-	}
+	private MetodoPagamento metodoPagamento;
 	private List<Dettaglio> listaDettaglio;
 }

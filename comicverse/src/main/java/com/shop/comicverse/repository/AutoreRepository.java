@@ -1,13 +1,9 @@
 package com.shop.comicverse.repository;
 
-import com.shop.comicverse.entity.Fumetto;
-import com.shop.comicverse.entity.Inventario;
+import com.shop.comicverse.entity.Autore;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import com.shop.comicverse.entity.Autore;
 
 import java.util.List;
 

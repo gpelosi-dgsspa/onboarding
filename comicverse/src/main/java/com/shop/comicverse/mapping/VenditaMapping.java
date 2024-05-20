@@ -11,7 +11,7 @@ public class VenditaMapping {
         vendita.setIdVendita(venditaDTO.getIdVendita());
         vendita.setDataOrdine(venditaDTO.getDataOrdine());
         vendita.setTotaleOrdine(venditaDTO.getTotaleOrdine());
-        vendita.setListaDettaglio(venditaDTO.getListaDettaglio());
+        vendita.setMetodoPagamento(venditaDTO.getMetodoPagamento());
         return vendita;
     }
 
@@ -20,7 +20,7 @@ public class VenditaMapping {
         venditaDTO.setIdVendita(vendita.getIdVendita());
         venditaDTO.setDataOrdine(vendita.getDataOrdine());
         venditaDTO.setTotaleOrdine(vendita.getTotaleOrdine());
-        venditaDTO.setListaDettaglio(vendita.getListaDettaglio());
+        venditaDTO.setMetodoPagamento(vendita.getMetodoPagamento());
         return venditaDTO;
     }
 }

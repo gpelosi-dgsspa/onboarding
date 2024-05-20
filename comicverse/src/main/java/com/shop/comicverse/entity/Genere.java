@@ -1,19 +1,19 @@
 package com.shop.comicverse.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Genere")
+@Table(name = "GENERE")
 public class Genere {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_GENERE")
 	private Integer idGenere;
-	
+
+	@Column(name = "NOME")
 	private String nome;
+
 }

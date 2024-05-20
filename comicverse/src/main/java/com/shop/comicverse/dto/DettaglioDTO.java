@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 public class DettaglioDTO {
     private Integer idDettaglio;
-    private Inventario oggetto;
+    private Inventario articolo;
     private int quantita;
 }
