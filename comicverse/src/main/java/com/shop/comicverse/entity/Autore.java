@@ -1,5 +1,6 @@
 package com.shop.comicverse.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,7 +24,8 @@ public class Autore {
 
 	@Column(name = "VIVO")
 	private boolean vivo;
-	
+
+	@JsonManagedReference
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "autoreFumetto", cascade = CascadeType.ALL)
 	private List<Fumetto> listaFumetti;
 

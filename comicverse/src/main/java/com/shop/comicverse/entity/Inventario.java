@@ -1,5 +1,7 @@
 package com.shop.comicverse.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +18,7 @@ public class Inventario {
 	private Integer idArticolo;
 	
 	//il mio fk fumetto a cosa fa riferimento? all'id della tabella che sto chiamando
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name = "FK_FUMETTO", referencedColumnName = "ID_FUMETTO")
 	private Fumetto fumetto;
@@ -26,6 +29,7 @@ public class Inventario {
 	@Column(name = "GIACENZA")
 	private int giacenza;
 
+	@JsonManagedReference
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "articolo", cascade = CascadeType.ALL)
     private List<Dettaglio> dettaglioLista;
 

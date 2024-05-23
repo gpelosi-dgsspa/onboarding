@@ -1,11 +1,13 @@
 package com.shop.comicverse.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.shop.comicverse.things.MetodoPagamento;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,5 +28,9 @@ public class Vendita {
 	@Column(name = "METODO_PAGAMENTO")
 	@Enumerated(EnumType.STRING)
 	private MetodoPagamento metodoPagamento;
+
+	@JsonManagedReference
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "vendita", cascade = CascadeType.ALL)
+	private List<Dettaglio> listaDettaglio;
 
 }

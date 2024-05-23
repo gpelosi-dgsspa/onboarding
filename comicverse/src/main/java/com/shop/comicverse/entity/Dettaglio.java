@@ -1,5 +1,6 @@
 package com.shop.comicverse.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,10 +13,12 @@ public class Dettaglio {
 	@Column(name = "ID_DETTAGLIO")
 	private Integer idDettaglio;
 
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "FK_VENDITA")
 	private Vendita vendita;
 
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "FK_ARTICOLO")
 	private Inventario articolo;

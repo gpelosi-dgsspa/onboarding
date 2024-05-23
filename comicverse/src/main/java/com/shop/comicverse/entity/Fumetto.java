@@ -1,5 +1,7 @@
 package com.shop.comicverse.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -31,13 +33,15 @@ public class Fumetto {
 
 	@Column(name = "DESCRIZIONE")
 	private String descrizione;
-	
+
+	@JsonManagedReference
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
     @JoinTable(name = "GENERE_FUMETTO", 
     			joinColumns = @JoinColumn(name = "FK_FUMETTO", referencedColumnName = "ID_FUMETTO"),
     			inverseJoinColumns = @JoinColumn(name = "FK_GENERE", referencedColumnName = "ID_GENERE"))
 	private List<Genere> listaGeneri;
-	
+
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "FK_AUTORE", referencedColumnName = "ID_AUTORE")
 	private Autore autoreFumetto;

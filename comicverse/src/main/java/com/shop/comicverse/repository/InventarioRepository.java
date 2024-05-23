@@ -12,7 +12,7 @@ public interface InventarioRepository extends JpaRepository<Inventario, Integer>
                     "FROM INVENTARIO i", nativeQuery = true)
     Integer numeroOggetti();
 
-    @Query(value = "SELECT AVG(i.PREZZO_VENDITA)" +
+    @Query(value = "SELECT AVG(i.PREZZO_VENDITA) " +
                     "FROM INVENTARIO i", nativeQuery = true)
     Double prezzoMedioVendita();
 
