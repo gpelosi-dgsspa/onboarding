@@ -61,8 +61,8 @@ public class InventarioService {
         return mediaInventario;
     }
 
-    public Inventario oggettoMinQuantita(){
-        Inventario articoloMinimo = inventarioRepository.oggettoMinQuantita();
+    public Object oggettoMinQuantita(){
+        Object articoloMinimo = inventarioRepository.oggettoMinQuantita();
         return articoloMinimo;
     }
 }

@@ -14,21 +14,22 @@ public interface FumettoRepository extends JpaRepository<Fumetto, Integer>{
     @Query(value = "SELECT f.TITOLO " +
             "FROM FUMETTO f " +
             "WHERE f.TITOLO LIKE :a%", nativeQuery = true)
-    List<Fumetto> fumettiLetteraSpecifica(@Param("a") String lettera);
+    List<Object> fumettiLetteraSpecifica(@Param("a") String lettera);
 
     @Query(value = "SELECT f.TITOLO, f.DATA_PUBBLICAZIONE " +
             "FROM FUMETTO f " +
             "WHERE f.DATA_PUBBLICAZIONE > :data", nativeQuery = true)
-    List<Fumetto> fumettiDopoData(@Param("data") LocalDate data);
+    List<Object> fumettiDopoData(@Param("data") LocalDate data);
 
     @Query(value = "SELECT f.TITOLO, MAX(i.PREZZO_VENDITA) " +
             "FROM FUMETTO f " +
-            "JOIN INVENTARIO i ON f.ID_FUMETTO = i.FK_FUMETTO", nativeQuery = true)
-    Fumetto fumettoPrezzoMassimo();
+            "JOIN INVENTARIO i ON f.ID_FUMETTO = i.FK_FUMETTO " +
+            "GROUP BY f.TITOLO", nativeQuery = true)
+    Object fumettoPrezzoMassimo();
 
     @Query(value = "SELECT f.TITOLO, i.PREZZO_VENDITA " +
             "FROM FUMETTO f " +
             "JOIN INVENTARIO i ON f.ID_FUMETTO = i.FK_FUMETTO " +
             "WHERE i.PREZZO_VENDITA BETWEEN :min AND :max", nativeQuery = true)
-    List<Fumetto> fumettiPrezzoSpecifico(@Param("min") Double prezzoMin, @Param("max") Double prezzoMax);
+    List<Object> fumettiPrezzoSpecifico(@Param("min") Double prezzoMin, @Param("max") Double prezzoMax);
 }

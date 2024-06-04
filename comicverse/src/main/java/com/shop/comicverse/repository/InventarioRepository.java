@@ -16,11 +16,10 @@ public interface InventarioRepository extends JpaRepository<Inventario, Integer>
                     "FROM INVENTARIO i", nativeQuery = true)
     Double prezzoMedioVendita();
 
-    @Query(value = "SELECT f.TITOLO, MIN(d.QUANTITA) " +
+    @Query(value = "SELECT f.TITOLO, MIN(i.GIACENZA) " +
             "FROM INVENTARIO i " +
-            "JOIN DETTAGLIO_VENDITA d ON d.FK_ARTICOLO = i.ID_ARTICOLO " +
             "JOIN FUMETTO f ON f.ID_FUMETTO = i.FK_FUMETTO " +
             "GROUP BY f.TITOLO", nativeQuery = true)
-    Inventario oggettoMinQuantita();
+    Object oggettoMinQuantita();
 
 }

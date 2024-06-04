@@ -53,23 +53,23 @@ public class FumettoService {
 		}
 	}
 
-	public List<Fumetto> fumettiLetteraSpecifica(String lettera) {
-		List<Fumetto> listainizialeFumetto = fumettoRepository.fumettiLetteraSpecifica(lettera);
+	public List<Object> fumettiLetteraSpecifica(String lettera) {
+		List<Object> listainizialeFumetto = fumettoRepository.fumettiLetteraSpecifica(lettera);
 		return listainizialeFumetto;
 	}
 
-	public List<Fumetto> fumettiDopoData(LocalDate data) {
-		List<Fumetto> listainizialeFumetto = fumettoRepository.fumettiDopoData(data);
+	public List<Object> fumettiDopoData(LocalDate data) {
+		List<Object> listainizialeFumetto = fumettoRepository.fumettiDopoData(data);
 		return listainizialeFumetto;
 	}
 
-	public Fumetto fumettoPrezzoMassimo() {
-		Fumetto fumettoMassimo = fumettoRepository.fumettoPrezzoMassimo();
+	public Object fumettoPrezzoMassimo() {
+		Object fumettoMassimo = fumettoRepository.fumettoPrezzoMassimo();
 		return fumettoMassimo;
 	}
 
-	public List<Fumetto> fumettiPrezzoSpecifico(Double prezzoMin, Double prezzoMax) {
-		List<Fumetto> fumettiRange = fumettoRepository.fumettiPrezzoSpecifico(prezzoMin, prezzoMax);
+	public List<Object> fumettiPrezzoSpecifico(Double prezzoMin, Double prezzoMax) {
+		List<Object> fumettiRange = fumettoRepository.fumettiPrezzoSpecifico(prezzoMin, prezzoMax);
 		return fumettiRange;
 	}
 

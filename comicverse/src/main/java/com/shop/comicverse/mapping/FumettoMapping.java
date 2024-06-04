@@ -14,8 +14,8 @@ public class FumettoMapping {
         fumetto.setVolume(fumettoDTO.getVolume());
         fumetto.setDataPubblicazione(fumettoDTO.getDataPubblicazione());
         fumetto.setDescrizione(fumettoDTO.getDescrizione());
-        //fumetto.setListaGeneri(fumettoDTO.getListaGeneri());
-        //fumetto.setAutoreFumetto(fumettoDTO.getAutoreFumetto());
+        fumetto.setListaGeneri(fumettoDTO.getListaGeneri());
+        fumetto.setAutoreFumetto(fumettoDTO.getAutoreFumetto());
         return fumetto;
     }
 
@@ -27,8 +27,8 @@ public class FumettoMapping {
         fumettoDTO.setVolume(fumetto.getVolume());
         fumettoDTO.setDataPubblicazione(fumetto.getDataPubblicazione());
         fumettoDTO.setDescrizione(fumetto.getDescrizione());
-        //fumettoDTO.setListaGeneri(fumetto.getListaGeneri());
-        //fumettoDTO.setAutoreFumetto(fumetto.getAutoreFumetto());
+        fumettoDTO.setListaGeneri(fumetto.getListaGeneri());
+        fumettoDTO.setAutoreFumetto(fumetto.getAutoreFumetto());
         return fumettoDTO;
     }
 }

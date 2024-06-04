@@ -27,46 +27,74 @@ public class FumettoController {
     //CRUD Create
     @PostMapping("/crea-fumetto")
     public ResponseEntity<FumettoDTO> creaFumetto (@RequestBody FumettoDTO fumettoDTO){
-        FumettoDTO newFumetto = fumettoService.creaFumetto(fumettoDTO);
-        return new ResponseEntity<>(newFumetto, HttpStatus.CREATED);
+        try {
+            FumettoDTO newFumetto = fumettoService.creaFumetto(fumettoDTO);
+            return new ResponseEntity<>(newFumetto, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PostMapping("/crea-autore")
     public ResponseEntity<AutoreDTO> creaAutore (@RequestBody AutoreDTO autoreDTO){
-        AutoreDTO newAutore = autoreService.creaAutore(autoreDTO);
-        return new ResponseEntity<>(newAutore, HttpStatus.CREATED);
+        try {
+            AutoreDTO newAutore = autoreService.creaAutore(autoreDTO);
+            return new ResponseEntity<>(newAutore, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PostMapping("/crea-genere")
     public ResponseEntity<GenereDTO> creaGenere (@RequestBody GenereDTO genereDTO){
-        GenereDTO newGenere = genereService.creaGenere(genereDTO);
-        return new ResponseEntity<>(newGenere, HttpStatus.CREATED);
+        try {
+            GenereDTO newGenere = genereService.creaGenere(genereDTO);
+            return new ResponseEntity<>(newGenere, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     //CRUD Read
     @GetMapping("/cerca-id-fumetto/{id}")
     public ResponseEntity<FumettoDTO> cercaIdFumetto (@PathVariable Integer id){
-        FumettoDTO findFumetto = fumettoService.cercaFumettoId(id);
-        return ResponseEntity.ok(findFumetto);
+        try {
+            FumettoDTO findFumetto = fumettoService.cercaFumettoId(id);
+            return ResponseEntity.ok(findFumetto);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/cerca-id-autore/{id}")
     public ResponseEntity<AutoreDTO> cercaIdAutore (@PathVariable Integer id){
-        AutoreDTO findAutore = autoreService.cercaAutoreId(id);
-        return ResponseEntity.ok(findAutore);
+        try {
+            AutoreDTO findAutore = autoreService.cercaAutoreId(id);
+            return ResponseEntity.ok(findAutore);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/cerca-id-genere/{id}")
     public ResponseEntity<GenereDTO> cercaIdGenere (@PathVariable Integer id){
-        GenereDTO findGenere = genereService.cercaGenereId(id);
-        return ResponseEntity.ok(findGenere);
+        try {
+            GenereDTO findGenere = genereService.cercaGenereId(id);
+            return ResponseEntity.ok(findGenere);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     //CRUD Display all
     @GetMapping("/lista-fumetto")
     public ResponseEntity<List<FumettoDTO>> listaFumetti (){
-        List<FumettoDTO> allFumetti = fumettoService.listaFumetti();
-        return new ResponseEntity<>(allFumetti, HttpStatus.OK);
+        try {
+            List<FumettoDTO> allFumetti = fumettoService.listaFumetti();
+            return new ResponseEntity<>(allFumetti, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/lista-autore")
